@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - John Doe</title>
+  <style>
+    :root { --accent: #9ca3af; --accent-hover: #d4d4d8; --accent-bg: #27272a; }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #e4e4e7;
+      background-color: #000000;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .header {
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #f8fafc;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .back-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .back-link:hover {
+      color: var(--accent-hover);
+    }
+
+    .section {
+      margin-bottom: 4rem;
+    }
+
+    .section h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #f8fafc;
+    }
+
+    .projects-grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .project-item {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .project-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-icon {
+      width: 50px;
+      height: 50px;
+      background: #f0f0f0;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .project-info {
+      flex: 1;
+    }
+
+    .project-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #f8fafc;
+      margin-bottom: 0.25rem;
+    }
+
+    .project-title a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .project-title a:hover {
+      color: var(--accent-hover);
+    }
+
+    .project-period {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-status {
+      font-size: 0.8rem;
+      background: #18181b;
+      color: var(--accent-hover);
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .project-status.ongoing {
+      background: #18181b;
+      color: var(--accent);
+    }
+
+    .project-status.paused {
+      background: #18181b;
+      color: var(--accent);
+    }
+
+    .project-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      color: #555;
+    }
+
+    .project-tech {
+      font-size: 0.9rem;
+      color: #888;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .project-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .project-links a:hover {
+      color: var(--accent-hover);
+    }
+
+    .project-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+
+    .metric {
+      text-align: center;
+    }
+
+    .metric-number {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #f8fafc;
+      margin-bottom: 0.25rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    .featured-project {
+      background: #18181b;
+      border: 2px solid #27272a;
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .featured-badge {
+      background: var(--accent);
+      color: #0a0a0b;
+      font-size: 0.8rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 12px;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .nav-section {
+      margin: 2rem 0;
+      padding: 1rem 0;
+      border-top: 1px solid #eee;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-hover);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .nav-links {
+        gap: 1rem;
+      }
+      
+      .project-header {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .project-links {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .project-metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Side Projects</h1>
+    <div class="subtitle">Things I've built in my spare time</div>
+    <a href="Home.html" class="back-link">← Back to home</a>
+  </header>
+
+  <nav class="nav-section">
+    <div class="nav-links">
+      <a href="Home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="blog/index.html">Blog</a>
+      <a href="resume.html">Resume</a>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="featured-project">
+      <div class="featured-badge">Featured</div>
+      <div class="project-header">
+        <div class="project-icon">🎮</div>
+        <div class="project-info">
+          <h3 class="project-title">
+            <a href="https://pixelcraft-demo.com" target="_blank">PixelCraft - Retro Game Engine</a>
+          </h3>
+          <div class="project-period">2024</div>
+        </div>
+      </div>
+      <div class="project-status">Production</div>
+      <p class="project-description">
+        A comprehensive 2D game engine built from scratch using modern web technologies. Features
+        pixel-perfect rendering, advanced audio processing, entity-component architecture, and
+        a complete level editor. Designed for rapid prototyping of retro-style games with modern
+        development workflows.
+      </p>
+      <div class="project-metrics">
+        <div class="metric">
+          <div class="metric-number">10K+</div>
+          <div class="metric-label">Downloads</div>
+        </div>
+        <div class="metric">
+          <div class="metric-number">150+</div>
+          <div class="metric-label">GitHub Stars</div>
+        </div>
+        <div class="metric">
+          <div class="metric-number">25+</div>
+          <div class="metric-label">Contributors</div>
+        </div>
+        <div class="metric">
+          <div class="metric-number">95%</div>
+          <div class="metric-label">Test Coverage</div>
+        </div>
+      </div>
+      <div class="project-tech">TypeScript • WebGL • Canvas API • Web Audio API • Webpack • Jest</div>
+      <div class="project-links">
+        <a href="https://github.com/johndoe/pixelcraft" target="_blank">GitHub</a>
+        <a href="https://pixelcraft-demo.com" target="_blank">Live Demo</a>
+        <a href="https://npmjs.com/package/pixelcraft" target="_blank">NPM Package</a>
+        <a href="/docs/pixelcraft" target="_blank">Documentation</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Current Projects</h2>
+
+    <div class="projects-grid">
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-icon">🤖</div>
+          <div class="project-info">
+            <h3 class="project-title">
+              <a href="https://ai-assistant-demo.com" target="_blank">AI Code Assistant</a>
+            </h3>
+            <div class="project-period">Ongoing</div>
+          </div>
+        </div>
+        <div class="project-status ongoing">In Development</div>
+        <p class="project-description">
+          Intelligent chatbot with natural language processing, context awareness,
+          and deep integration with popular development tools. Supports multiple
+          programming languages and provides contextual code suggestions.
+        </p>
+        <div class="project-tech">Python • FastAPI • OpenAI API • Docker • Kubernetes</div>
+        <div class="project-links">
+          <a href="https://github.com/johndoe/ai-assistant" target="_blank">GitHub</a>
+          <a href="https://ai-assistant-demo.com" target="_blank">Try Beta</a>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-icon">🌐</div>
+          <div class="project-info">
+            <h3 class="project-title">
+              <a href="https://headless-cms-demo.com" target="_blank">Minimal CMS</a>
+            </h3>
+            <div class="project-period">Ongoing</div>
+          </div>
+        </div>
+        <div class="project-status ongoing">Beta</div>
+        <p class="project-description">
+          Headless content management system with a focus on simplicity and performance. 
+          Features markdown support, API-first architecture, and a clean, minimal interface
+          for content creators.
+        </p>
+        <div class="project-tech">Next.js • Prisma • GraphQL • PostgreSQL • Vercel</div>
+        <div class="project-links">
+          <a href="https://github.com/johndoe/minimal-cms" target="_blank">GitHub</a>
+          <a href="#" onclick="alert('Demo coming soon!')">Demo Soon</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Completed Projects</h2>
+
+    <div class="projects-grid">
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-icon">📊</div>
+          <div class="project-info">
+            <h3 class="project-title">
+              <a href="https://dataviz-demo.com" target="_blank">DataViz Dashboard</a>
+            </h3>
+            <div class="project-period">2023</div>
+          </div>
+        </div>
+        <div class="project-status">Completed</div>
+        <p class="project-description">
+          Real-time analytics dashboard with customizable widgets, dark mode support, 
+          and responsive design. Features interactive charts, data export capabilities,
+          and seamless API integration for various data sources.
+        </p>
+        <div class="project-tech">React • D3.js • Node.js • PostgreSQL • Redis</div>
+        <div class="project-links">
+          <a href="https://github.com/johndoe/dataviz" target="_blank">GitHub</a>
+          <a href="https://dataviz-demo.com" target="_blank">Live Demo</a>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-icon">🎵</div>
+          <div class="project-info">
+            <h3 class="project-title">
+              <a href="https://synth.johndoe.dev" target="_blank">Web Audio Synthesizer</a>
+            </h3>
+            <div class="project-period">2023</div>
+          </div>
+        </div>
+        <div class="project-status">Completed</div>
+        <p class="project-description">
+          Browser-based music synthesizer with real-time audio processing,
+          MIDI support, and a retro-inspired interface. Perfect for creating
+          chiptune and electronic music directly in the browser.
+        </p>
+        <div class="project-tech">Web Audio API • Vue.js • SCSS • PWA</div>
+        <div class="project-links">
+          <a href="https://github.com/johndoe/web-synth" target="_blank">GitHub</a>
+          <a href="https://synth.johndoe.dev" target="_blank">Play Now</a>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-icon">📱</div>
+          <div class="project-info">
+            <h3 class="project-title">
+              <a href="https://habitpixel.app" target="_blank">Habit Tracker</a>
+            </h3>
+            <div class="project-period">2022</div>
+          </div>
+        </div>
+        <div class="project-status">Completed</div>
+        <p class="project-description">
+          Minimalist habit tracking app with streaks, statistics, and reminder notifications. 
+          Clean interface focusing on simplicity and daily motivation to build lasting habits.
+        </p>
+        <div class="project-tech">React Native • SQLite • Redux • Expo</div>
+        <div class="project-links">
+          <a href="https://github.com/johndoe/habit-tracker" target="_blank">GitHub</a>
+          <a href="https://habitpixel.app" target="_blank">App Store</a>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-icon">🎨</div>
+          <div class="project-info">
+            <h3 class="project-title">
+              <a href="https://pixelart.johndoe.dev" target="_blank">Pixel Art Creator</a>
+            </h3>
+            <div class="project-period">2022</div>
+          </div>
+        </div>
+        <div class="project-status">Completed</div>
+        <p class="project-description">
+          Browser-based tool for creating and editing pixel art with multiple export options.
+          Features layer support, animation tools, and a color palette system inspired by
+          classic gaming systems.
+        </p>
+        <div class="project-tech">Canvas API • JavaScript • PWA • IndexedDB</div>
+        <div class="project-links">
+          <a href="https://github.com/johndoe/pixel-art-creator" target="_blank">GitHub</a>
+          <a href="https://pixelart.johndoe.dev" target="_blank">Try It</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Open Source Contributions</h2>
+    <p style="font-size: 1rem; line-height: 1.7; color: #444; margin-bottom: 1rem;">
+      I'm passionate about giving back to the developer community. Here are some of my contributions
+      to open source projects that help other developers build better software.
+    </p>
+    
+    <div class="project-metrics">
+      <div class="metric">
+        <div class="metric-number">50+</div>
+        <div class="metric-label">Contributions</div>
+      </div>
+      <div class="metric">
+        <div class="metric-number">15+</div>
+        <div class="metric-label">Projects</div>
+      </div>
+      <div class="metric">
+        <div class="metric-number">200+</div>
+        <div class="metric-label">Issues Resolved</div>
+      </div>
+      <div class="metric">
+        <div class="metric-number">25+</div>
+        <div class="metric-label">PRs Merged</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 1.5rem;">
+      <a href="https://github.com/johndoe" target="_blank" style="color: #0066cc; text-decoration: none;">View all contributions on GitHub →</a>
+    </div>
+  </section>
+</body>
+</html>
