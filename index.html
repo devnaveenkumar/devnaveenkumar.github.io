@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>John Doe - Developer</title>
+  <title>Naveen - Developer</title>
   <style>
     * {
       margin: 0;
@@ -202,41 +202,32 @@
       margin-left: auto;
     }
 
-    .links-section {
-      margin-top: 4rem;
-    }
+.links-section {
+  padding: 2rem 0;
+}
 
-    .links-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
+.links-line {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
 
-    .link-item {
-      padding: 0.5rem 0;
-    }
+.links-line a {
+  color: var(--accent-hover);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
 
-    .link-label {
-      font-size: 0.9rem;
-      color: #71717a;
-      margin-bottom: 0.25rem;
-    }
+.links-line a:hover {
+  color: #ffffff;
+}
 
-    .link-value {
-      font-size: 1rem;
-    }
-
-    .link-value a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .link-value a:hover {
-      text-decoration: underline;
-      color: var(--accent-hover);
-    }
-
-    .nav-section {
+.separator {
+  color: var(--accent);
+  opacity: 0.6;
+}    .nav-section {
       margin: 2rem 0;
       padding: 1rem 0;
       border-top: 1px solid #27272a;
@@ -298,15 +289,63 @@
 
     @media (max-width: 768px) {
       body {
-        padding: 1rem;
+        padding: 1rem 0.75rem;
+        max-width: 100%;
       }
       
       h1 {
         font-size: 2rem;
+        line-height: 1.2;
+      }
+      
+      .subtitle {
+        font-size: 1rem;
+      }
+      
+      .contact-link {
+        font-size: 0.9rem;
+        word-break: break-all;
+      }
+      
+      .section h2 {
+        font-size: 1.3rem;
+      }
+      
+      .section p {
+        font-size: 0.95rem;
+      }
+      
+      .nav-section {
+        margin: 1.5rem 0;
+        padding: 0.75rem 0;
       }
       
       .nav-links {
         gap: 1rem;
+        justify-content: center;
+      }
+      
+      .nav-links a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0;
+      }
+      
+      .work-period, .project-period {
+        font-size: 0.8rem;
+      }
+      
+      .work-title {
+        font-size: 1rem;
+        line-height: 1.3;
+      }
+      
+      .work-description, .project-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+      
+      .tech-stack, .project-tech {
+        font-size: 0.8rem;
       }
       
       .project-header {
@@ -317,18 +356,122 @@
       
       .project-period {
         margin-left: 0;
+        margin-top: 0.5rem;
+      }
+      
+      .project-title {
+        font-size: 1rem;
+      }
+      
+      .links-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      .link-item {
+        padding: 1rem;
+      }
+
+      .link-content {
+        gap: 0.75rem;
+      }
+
+      .link-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+      }
+      
+      .link-label {
+        font-size: 0.8rem;
+      }
+      
+      .link-value {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 0.75rem 0.5rem;
+      }
+      
+      h1 {
+        font-size: 1.75rem;
+      }
+      
+      .subtitle {
+        font-size: 0.9rem;
+      }
+      
+      .section {
+        margin-bottom: 3rem;
+      }
+      
+      .section h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+      
+      .nav-links a {
+        font-size: 0.85rem;
+      }
+      
+      .work-item, .project-item {
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .work-title, .project-title {
+        font-size: 0.95rem;
+      }
+      
+      .work-description, .project-description {
+        font-size: 0.85rem;
+      }
+      
+      .project-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      body {
+        max-width: 640px;
+        padding: 2rem 1.5rem;
+      }
+      
+      .links-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (min-width: 1025px) {
+      body {
+        max-width: 680px;
+        padding: 2.5rem 2rem;
+      }
+      
+      .section {
+        margin-bottom: 4.5rem;
+      }
+      
+      .links-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
   <header class="header">
-    <h1>John Doe</h1>
+    <h1>Naveen</h1>
     <div class="subtitle">
       <span class="status-indicator"></span>
-      Full-Stack Developer & Pixel Enthusiast
+      Software Engineer & Problem Solver
     </div>
-    <a href="mailto:johndoe@example.com" class="contact-link">johndoe@example.com</a>
+    <a href="mailto:itsactuallynaveen@gmail.com" class="contact-link">itsactuallynaveen@gmail.com</a>
   </header>
 
   <nav class="nav-section">
@@ -342,14 +485,10 @@
   <section class="section" id="about">
     <h2>About</h2>
     <p>
-      I'm John. I enjoy building dynamic, creative products from start to finish.
-      Focused on developing intuitive experiences that constantly grow and improve based on
-      user feedback. Always shipping.
+      I'm Naveen. I design and build things with code, always looking for smarter, simpler ways to solve problems. I love exploring new technologies and turning them into useful, polished products.
     </p>
     <p>
-      When I'm not coding, you'll find me exploring pixel art, playing retro games, 
-      or contributing to open-source projects. I believe in the power of simplicity 
-      and strive to create solutions that are both elegant and functional.
+      When I'm not coding, I'm usually reading, learning something new, or following a rabbit hole of ideas that eventually make their way back into my work. I believe great things are built by staying curious and shipping often.
     </p>
   </section>
 
@@ -357,40 +496,12 @@
     <h2>Work Experience</h2>
 
     <div class="work-item">
-      <div class="work-period">2022 - present</div>
-      <h3 class="work-title">
-        <a href="https://techcorp.com" target="_blank">Senior Full-Stack Developer – TechCorp Inc.</a>
-      </h3>
+      <div class="work-period">2024 – Present</div>
+      <h3 class="work-title">Member of Technical Staff – Zoho Corporation</h3>
       <p class="work-description">
-        Lead development of scalable web applications serving 100k+ users daily.
-        Implemented microservices architecture reducing system downtime by 40%.
-        Mentored 5+ junior developers and established team coding standards.
+        Engineer in the Zoho CRM team, specializing in integrations with other Zoho applications. Designed and implemented seamless data synchronization between products, improving cross-app workflow efficiency. Collaborated closely with multiple product teams to ensure reliability and scalability of integrations used by thousands of businesses worldwide.
       </p>
-      <div class="tech-stack">React • Node.js • PostgreSQL • AWS • Docker</div>
-    </div>
-
-    <div class="work-item">
-      <div class="work-period">2020 - 2022</div>
-      <h3 class="work-title">
-        <a href="https://startupxyz.com" target="_blank">Frontend Developer – StartupXYZ</a>
-      </h3>
-      <p class="work-description">
-        Built responsive React applications with modern UI/UX principles.
-        Optimized application performance improving load times by 60%.
-        Collaborated with design team to implement pixel-perfect interfaces.
-      </p>
-      <div class="tech-stack">React • TypeScript • SCSS • Figma • Jest</div>
-    </div>
-
-    <div class="work-item">
-      <div class="work-period">2019 - 2020</div>
-      <h3 class="work-title">Frontend Developer – Freelance</h3>
-      <p class="work-description">
-        Worked with a range of agencies and startups to build products.
-        Developed custom solutions for diverse clients including e-commerce platforms
-        and marketing websites.
-      </p>
-      <div class="tech-stack">JavaScript • WordPress • PHP • CSS • jQuery</div>
+      <div class="tech-stack">Java • PostgreSQL • API Integration • Data Synchronization</div>
     </div>
   </section>
 
@@ -400,101 +511,40 @@
     <div class="projects-grid">
       <div class="project-item">
         <div class="project-header">
-          <div class="project-icon">🎮</div>
           <div>
-            <h3 class="project-title">
-              <a href="https://pixelcraft-demo.com" target="_blank">PixelCraft</a>
-            </h3>
+            <h3 class="project-title">PodScrape Transcribe</h3>
           </div>
           <div class="project-period">2024</div>
         </div>
         <p class="project-description">
-          A lightweight 2D game engine built with JavaScript and WebGL, featuring 
-          pixel-perfect rendering, sound system, and entity-component architecture.
+          Developed an automated podcast downloader and transcriber that fetches and downloads new episodes based on user preferences. Integrated transcription for easy search and reference, using web scraping and transcription services for efficiency.
         </p>
-        <div class="project-tech">TypeScript • WebGL • Canvas API • Web Audio API</div>
+        <div class="project-tech">Python • Web Scraping • Transcription APIs • Automation</div>
       </div>
 
       <div class="project-item">
         <div class="project-header">
-          <div class="project-icon">📊</div>
           <div>
-            <h3 class="project-title">
-              <a href="https://dataviz-demo.com" target="_blank">DataViz Dashboard</a>
-            </h3>
+            <h3 class="project-title">Receipt Parsing System</h3>
           </div>
-          <div class="project-period">2023</div>
+          <div class="project-period">2024</div>
         </div>
         <p class="project-description">
-          Real-time analytics dashboard with customizable widgets, dark mode support, 
-          and responsive design. Features interactive charts and data export.
+          Developed an automated receipt parsing system using image processing techniques. The system takes an image of a receipt as input and extracts relevant data such as the current date and total amount. Utilized OCR (Optical Character Recognition) to extract text from the image and process it. Integrated with Excel to input the extracted data into a spreadsheet, enabling efficient organization and management of receipts.
         </p>
-        <div class="project-tech">React • D3.js • Node.js • PostgreSQL</div>
-      </div>
-
-      <div class="project-item">
-        <div class="project-header">
-          <div class="project-icon">🎵</div>
-          <div>
-            <h3 class="project-title">
-              <a href="https://synth.johndoe.dev" target="_blank">Web Audio Synthesizer</a>
-            </h3>
-          </div>
-          <div class="project-period">2023</div>
-        </div>
-        <p class="project-description">
-          Browser-based music synthesizer with real-time audio processing,
-          MIDI support, and a retro-inspired interface for creating chiptune music.
-        </p>
-        <div class="project-tech">Web Audio API • Vue.js • SCSS • PWA</div>
-      </div>
-
-      <div class="project-item">
-        <div class="project-header">
-          <div class="project-icon">🤖</div>
-          <div>
-            <h3 class="project-title">
-              <a href="https://ai-assistant-demo.com" target="_blank">AI Code Assistant</a>
-            </h3>
-          </div>
-          <div class="project-period">Ongoing</div>
-        </div>
-        <p class="project-description">
-          Intelligent chatbot with natural language processing and deep integration 
-          with development tools. Supports multiple programming languages.
-        </p>
-        <div class="project-tech">Python • FastAPI • OpenAI API • Docker</div>
+        <div class="project-tech">Python • OCR • Image Processing • Excel Integration • OpenCV</div>
       </div>
     </div>
   </section>
 
   <section class="links-section" id="links">
     <h2>Links</h2>
-    <div class="links-grid">
-      <div class="link-item">
-        <div class="link-label">Github</div>
-        <div class="link-value">
-          <a href="https://github.com/johndoe" target="_blank">@johndoe</a>
-        </div>
-      </div>
-      <div class="link-item">
-        <div class="link-label">LinkedIn</div>
-        <div class="link-value">
-          <a href="https://linkedin.com/in/johndoe" target="_blank">linkedin.com/in/johndoe</a>
-        </div>
-      </div>
-      <div class="link-item">
-        <div class="link-label">Twitter</div>
-        <div class="link-value">
-          <a href="https://twitter.com/johndoe" target="_blank">@johndoe</a>
-        </div>
-      </div>
-      <div class="link-item">
-        <div class="link-label">Email</div>
-        <div class="link-value">
-          <a href="mailto:johndoe@example.com">johndoe@example.com</a>
-        </div>
-      </div>
+    <div class="links-line">
+      <a href="https://github.com/devnaveenkumar" target="_blank">GitHub</a>
+      <span class="separator">•</span>
+      <a href="https://www.linkedin.com/in/naveenkumar-t-7b5404230/" target="_blank">LinkedIn</a>
+      <span class="separator">•</span>
+      <a href="mailto:itsactuallynaveen@gmail.com">Email</a>
     </div>
   </section>
 </body>
